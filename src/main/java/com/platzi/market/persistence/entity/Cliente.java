@@ -1,8 +1,12 @@
 package com.platzi.market.persistence.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +26,12 @@ public class Cliente {
 
     @Column(name = "correo_electronico")
     private String email;
+
+    // relaciones
+
+    @OneToMany
+    @JoinColumn(name="cliente")
+    private List<Compra> compras;
 
     // setters and getters
 
