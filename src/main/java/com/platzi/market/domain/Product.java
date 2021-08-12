@@ -16,7 +16,6 @@ public class Product {
 
     private Category category;
 
-
     //setters and getters
 
     public int getProductId() {
