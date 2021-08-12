@@ -18,7 +18,7 @@ public class ProductoRepository {
     }
 
     public List<Producto> getByCategoria(int idCategoria) {
-        return productoCrudRepository.FindByIdCategoria(idCategoria);
+        return productoCrudRepository.findByIdCategoria(idCategoria);
     }
 
     public Optional<List<Producto>> getEscazos(int cantidadStock) {
