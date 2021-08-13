@@ -1,9 +1,9 @@
 package com.platzi.market.domain.repository;
 
+import com.platzi.market.domain.Product;
+
 import java.util.List;
 import java.util.Optional;
-
-import com.platzi.market.domain.Product;
 
 public interface ProductRepository {
 
@@ -12,5 +12,8 @@ public interface ProductRepository {
     Optional<List<Product>> getScarseProducts(int quantity);
     Optional<Product> getProduct(int productId);
     Product save(Product product);
-    void delete( int productId);
+    boolean productExist(int productId);
+    void delete(int productId);
+
+
 }

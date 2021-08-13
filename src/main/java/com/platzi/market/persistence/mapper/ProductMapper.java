@@ -1,13 +1,13 @@
 package com.platzi.market.persistence.mapper;
 
-import java.util.List;
-
 import com.platzi.market.domain.Product;
 import com.platzi.market.persistence.entity.Producto;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
+
+import java.util.List;
 
 @Mapper(componentModel = "spring", uses = {CategoryMapper.class})
 public interface ProductMapper {

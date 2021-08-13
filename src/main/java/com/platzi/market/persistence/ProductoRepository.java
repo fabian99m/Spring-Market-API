@@ -1,16 +1,15 @@
 package com.platzi.market.persistence;
 
-import java.util.List;
-import java.util.Optional;
-
 import com.platzi.market.domain.Product;
 import com.platzi.market.domain.repository.ProductRepository;
 import com.platzi.market.persistence.crud.ProductoCrudRepository;
 import com.platzi.market.persistence.entity.Producto;
 import com.platzi.market.persistence.mapper.ProductMapper;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class ProductoRepository implements ProductRepository {
@@ -19,7 +18,7 @@ public class ProductoRepository implements ProductRepository {
     private ProductoCrudRepository productoCrudRepository;
 
     @Autowired
-    private ProductMapper mapper ;
+    private ProductMapper mapper;
 
     @Override
     public List<Product> getAll() {
@@ -51,8 +50,13 @@ public class ProductoRepository implements ProductRepository {
     }
 
     @Override
-    public void delete(int idProducto) {
-        productoCrudRepository.deleteById(idProducto);
+    public boolean productExist(int productId) {
+        return productoCrudRepository.existsById(productId);
+    }
+
+    @Override
+    public void delete(int idProduct) {
+        productoCrudRepository.deleteById(idProduct);
     }
 
 }

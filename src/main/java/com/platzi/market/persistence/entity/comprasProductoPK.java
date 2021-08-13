@@ -2,10 +2,9 @@ package com.platzi.market.persistence.entity;
 
 import lombok.Data;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 
 @Embeddable
 public @Data
