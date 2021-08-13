@@ -42,5 +42,4 @@ public @Data class Producto {
     @ManyToOne
     @JoinColumn(name="id_categoria", insertable = false,updatable = false)
     private Categoria categoria;
-
 }
