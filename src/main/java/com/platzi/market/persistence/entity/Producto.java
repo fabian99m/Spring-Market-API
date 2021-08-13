@@ -1,5 +1,7 @@
 package com.platzi.market.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "productos")
-public class Producto {
+public @Data class Producto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,8 +26,8 @@ public class Producto {
     @Column(name = "id_categoria")
     private Integer idCategoria;
 
-    @Column(name = "codigos_barras")
-    private Integer codigoBarras;
+    @Column(name = "codigo_barras")
+    private String  codigoBarras;
 
     @Column(name = "precio_venta")
     private float precioVenta;
@@ -44,7 +46,7 @@ public class Producto {
 
 // setters and getters
 
-    public Integer getIdProducto() {
+    /*public Integer getIdProducto() {
         return idProducto;
     }
 
@@ -68,11 +70,11 @@ public class Producto {
         this.idCategoria = idCategoria;
     }
 
-    public Integer getCodigoBarras() {
+    public String getCodigoBarras() {
         return codigoBarras;
     }
 
-    public void setCodigoBarras(Integer codigoBarras) {
+    public void setCodigoBarras(String codigoBarras) {
         this.codigoBarras = codigoBarras;
     }
 
@@ -106,6 +108,6 @@ public class Producto {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
-    }
+    }*/
 
 }
