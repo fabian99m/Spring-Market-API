@@ -1,14 +1,16 @@
 package com.platzi.market.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "compras_productos")
-public class comprasProducto {
+public @Data
+class comprasProducto {
 
     @EmbeddedId
     private comprasProductoPK id;
-
     private Integer cantidad;
     private Double total;
     private Boolean estado;
@@ -16,6 +18,7 @@ public class comprasProducto {
     // relaciones
 
     @ManyToOne
+    @MapsId("idCompra")
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     private Compra compra;
 
